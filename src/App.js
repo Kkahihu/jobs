@@ -1,20 +1,13 @@
 import React from 'react';
+import JobBoardComponent from './components/JobBoardComponent';
 
-function App() {
-  const [jobs, setJobs] = useState([]);
 
-  useEffect(() => {
-    setJobs(data() {
-
-    },)
-  }, []);
-}
 
 function App() {
   return (
     <div className="App">
        <h1>Hello Sir</h1>
-       {jobs.}
+       <JobBoardComponent />
     </div>
   );
 }
