@@ -1,7 +1,14 @@
 import React from 'react';
 
-const JobBoardComponent = () => (
-    <div>Hi, I am a Job Board</div>
+const JobBoardComponent = ({ job }) => (
+    <div>
+    <div>
+        <img src={job.logo} alt={job.company} />
+    </div>
+
+    <div></div>
+    <div></div>
+    </div>
 )
 
 
