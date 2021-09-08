@@ -27,16 +27,22 @@ const JobBoardComponent = ({
         }
 
     return (
-        <div className="flex bg-white shadow-md m-4 p-6 rounded">
+        <div className={`flex flex-col bg-white shadow-md my-16 mx-10 p-6 rounded ${ 
+            featured && 'border-l-8 border-green-500 border-solid'
+            }`}>
             <div>
-                <img src= {logo} alt={company} />
+                <img className='-mt-16 mb-6 w-20 h-20' src= {logo} alt={company} />
             </div>
 
             <div className="flex flex-col justify-between ml-4">
                 <h3 className="font-bold text-green-500">
                     {company}
-                    {isNew && <span>New</span>}
-                    {featured && <span>New</span>}
+                    {isNew && (
+                        <span className="text-green-400 bg-green-100 font-bold m-2 p-1 rounded-full">New</span>
+                        )}
+                    {featured && (
+                        <span className="text-white bg-gray-800 font-bold py-1 px-2 rounded-full">Featured</span>
+                        )}
                 </h3>
                 <h2 className="font-bold text-xl">
                     {position}
@@ -45,7 +51,7 @@ const JobBoardComponent = ({
                     {postedAt} · {contract} · {location}
                 </p>
             </div>
-            <div className=" flex items-center ml-auto">
+            <div className=" flex flex-wrap items-center mt-4 mx-4 pt-4 border-t border-gray-500 border-solid">
                 {tags ? 
                 tags.map((langAndTool) => 
                 <span className="text-green-400 bg-green-100 font-bold m-2 p-2 rounded">{langAndTool}</span>) : ''}
